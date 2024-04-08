@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  /* Cor padrões */
+  --color-purple: hsl(259, 100%, 65%);
+  --color-error: hsl(0, 100%, 67%);
+
+  /*Cores Neutras */
+  --color-white: hsl(0, 0%, 100%);
+  --color-off-white: hsl(0, 0%, 94%);
+  --color-light-grey: hsl(0, 0%, 86%);
+  --color-Smokey-grey: hsl(0, 1%, 44%);
+  --color-off-black: hsl(0, 0%, 8%);
+
+  /*Tipografia*/
+  --font-standard: 3.2rem;
+  --font-weight700: 700;
+  --font-weight800: 800;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+html {
+  font-size: 62.5%;
+  background-color: var(--color-off-white);
+}

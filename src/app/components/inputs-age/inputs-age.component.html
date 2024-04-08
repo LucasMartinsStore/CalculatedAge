@@ -1,0 +1,91 @@
+<div>
+  <form [formGroup]="ageForm">
+    <fieldset class="container">
+      <div class="date-content">
+        <label for="day">Dia</label>
+        <input
+          [ngClass]="{
+            'error-alert':
+              ageForm.get('day')?.invalid &&
+              (ageForm.get('day')?.dirty || ageForm.get('day')?.touched)
+          }"
+          min="1"
+          max="31"
+          id="day"
+          name="day"
+          formControlName="day"
+          placeholder="DD"
+          type="number"
+        />
+        @if (ageForm.get('day')?.hasError('required') &&
+        ageForm.get('day')?.touched ) {
+        <p class="error-message">Campo Obrigatório</p>
+        } @if (ageForm.get('day')?.hasError('min') ||
+        ageForm.get('day')?.hasError('max') ) {
+        <p class="error-message">O dia deve estar entre 1 e 31.</p>
+        }
+      </div>
+      <div class="date-content">
+        <label for="">Mês</label>
+        <input
+          [ngClass]="{
+            'error-alert':
+              ageForm.get('month')?.invalid &&
+              (ageForm.get('month')?.dirty || ageForm.get('month')?.touched)
+          }"
+          min="1"
+          max="12"
+          id="month"
+          name="month"
+          formControlName="month"
+          placeholder="MM"
+          type="number"
+        />
+        @if (ageForm.get('month')?.hasError('required') &&
+        ageForm.get('month')?.touched ) {
+        <p class="error-message">Campo Obrigatório</p>
+        } @if (ageForm.get('month')?.hasError('min') ||
+        ageForm.get('month')?.hasError('max') ) {
+        <p class="error-message">O mês deve estar entre 1 e 12.</p>
+        }
+      </div>
+      <div class="date-content">
+        <label for="">Ano</label>
+        <input
+          [ngClass]="{
+            'error-alert':
+              ageForm.get('year')?.invalid &&
+              (ageForm.get('year')?.dirty || ageForm.get('year')?.touched)
+          }"
+          min="1900"
+          max="2099"
+          id="year"
+          name="year"
+          formControlName="year"
+          placeholder="AA"
+          type="number"
+        />
+        @if (ageForm.get('year')?.hasError('required') &&
+        ageForm.get('year')?.touched ) {
+        <p class="error-message">Campo Obrigatório</p>
+        } @if (ageForm.get('year')?.hasError('min') ||
+        ageForm.get('year')?.hasError('max') ) {
+        <p class="error-message">O ano deve estar entre 1900 e 2099.</p>
+        }
+      </div>
+    </fieldset>
+  </form>
+
+  <hr />
+  <div class="result">
+    <p>
+      <span>{{ calculatedAge() }}</span> Anos
+    </p>
+    <p>
+      <span>{{ calculatedMonths() }}</span> Meses
+    </p>
+    <p>
+      <span>{{ calculateDaysLived() }} </span> dias
+    </p>
+  </div>
+</div>
