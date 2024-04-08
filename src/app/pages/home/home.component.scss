@@ -1,6 +1,7 @@
 .container {
   display: flex;
   background-color: var(--color-white);
+  box-shadow: 15px 6px 30px 13px rgba(0, 0, 0, 0.1);
   width: 100rem;
   height: 80rem;
   border-radius: 0.8rem 0.8rem 30% 0.8rem;
